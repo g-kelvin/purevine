@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div>
-        </div>24 HOURS (Always Open)
+        </div>
 
         <!-- Main Header Area -->
         <div class="main-header-area" id="stickyHeader">
@@ -98,12 +98,12 @@
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img" style="background-image: url(img/bg-img/hero1.jpg);">
+    <section class="breadcumb-area bg-img" style="background-image: url(img/bg-img/bg3.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcumb-content">
-                        <h3 class="breadcumb-title">Contact</h3>
+                        <h3 class="breadcumb-title">Contact Us</h3>
                     </div>
                 </div>
             </div>
@@ -111,72 +111,62 @@
     </section>
     <!-- ##### Breadcumb Area End ##### -->
 
-    <section class="south-contact-area section-padding-100">
+     <!-- ##### Featured Properties Area Start ##### -->
+    <section class="featured-properties-area section-padding-100-50">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="contact-heading">
-                        <h6>Contact info</h6>
+                    <div class="section-heading wow fadeInUp">
+                        <h2>Messaging</h2>
+                        <p>Ukulima Agrovet Services Limited</p>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-12 col-lg-4">
-                    <div class="content-sidebar">
-                        <!-- Office Hours -->
-                        <div class="weekly-office-hours">
-                            <ul>
-                                <li class="d-flex align-items-center justify-content-between"><span>Monday - Friday</span> <span>08 AM - 17 PM</span></li>
-                                <li class="d-flex align-items-center justify-content-between"><span>Saturday</span> <span>09 AM - 14 PM</span></li>
-                                <li class="d-flex align-items-center justify-content-between"><span>Sunday</span> <span>Closed</span></li>
-                            </ul>
-                        </div>
-                        <!-- Address -->
-                        <div class="address mt-30">
-                            <h6><img src="img/icons/phone-call.png" alt=""> +254 706 188484</h6>
-                            <h6><img src="img/icons/envelope.png" alt=""> info@purevine.co.ke</h6>
-                            <h6><img src="img/icons/location.png" alt=""> Nairobi, Kenyatta Ave, DB house,<br> left wing rm 23</h6>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Contact Form Area -->
-                <div class="col-12 col-lg-8">
-                    <div class="contact-form">
-                        <form action="message.php" method="post">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="name"  placeholder="Your Name">
-                            </div>
-                            <div class="form-group">
-                                <input type="telphone" class="form-control" name="telphone"  placeholder="Your Phone">
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" name="email"  placeholder="Your Email">
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
-                            </div>
-                            <button type="submit"  name="submit" class="btn south-btn">Send Message</button>
-                        </form>
-                    </div>
-                </div>
+                <p> <?php 
+	if(isset($_POST['submit'])){
+		$name = $_POST['name'];
+		$email = $_POST['email'];
+		$telephone = $_POST['telephone'];
+		$message = $_POST['message']; 
+
+		$to = "info@purevine.co.ke";
+		$subject = 'Message from Ukulima Agrovet'." , ";
+		$msg ="Name: ".$name." , "."Telephone: ".$telephone." , "." Subject: ".$subject."wrote the following: ".$message;
+		$headers ="From: ".$email;
+         if(mail($to,$subject,$msg,$headers)){
+         	
+	      echo "<b>Message Sent. Thank You $name for your message.<b>";
+}
+
+else {
+	echo "yolo";
+	
+}
+
+       
+
+
+	}
+	else
+	{
+		echo "try again";
+	}
+
+ ?></p>
+
+                
+               
+                 
+               
             </div>
         </div>
     </section>
+    <!-- ##### Featured Properties Area End ##### -->
 
-    <!-- Google Maps -->
-   <!--  <div class="map-area mb-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div id="googleMap" class="googleMap"></div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-        <!-- ##### Footer Area Start ##### -->
+ <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area section-padding-100-0 bg-img gradient-background-overlay" style="background-image: url(img/bg-img/f-03.png);">
         <!-- Main Footer Area -->
         <div class="main-footer-area">
